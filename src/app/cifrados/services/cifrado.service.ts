@@ -48,7 +48,7 @@ export class CifradoService {
     this.notas.forEach((nota, i) => {
       let notasiguiente = ""
       if (0 == i) {
-        notasiguiente = this.notas[0]
+        notasiguiente = this.notas[11]
       } else {
         notasiguiente = this.notas[i - 1]
       }
