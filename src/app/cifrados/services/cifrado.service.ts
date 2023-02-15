@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Cifrado } from '../cifrado.interface';
+import { algoestacallendoaqui } from '../files/algo_esta_cayendo_aqui';
+import { circulo01 } from '../files/circulo01';
+import { diosestaaqui } from '../files/dios_esta_aqui';
+import { elespiritudediosesta } from '../files/el_espiritu_de_dios_esta_en_estelugar';
+import { en_el_nombre_de_jesus } from '../files/en_el_nombre_de_jesus';
+import { eres } from '../files/eres';
+import { haymomentosquelaspalabras } from '../files/hay_momentos_que_las_palabras';
 import { hermoso_eres_tu } from '../files/hermoso_eres_tu';
 import { temprano_yo_te_buscare } from '../files/temprano_yo_te_buscare';
 
@@ -12,7 +19,14 @@ export class CifradoService {
   notas2 = ["C", "B", "A#", "A", "G#", "G", "F#", "F", "E", "D#", "D", "C#"]
   constructor() {
     this.cifrados.push({ id: "1", nombre: "Hermoso eres tu", nota: "A", cifradoText: hermoso_eres_tu });
-    this.cifrados.push({ id: "2", nombre: "Temprano yo te  buscare", nota: "G", cifradoText: temprano_yo_te_buscare });
+    this.cifrados.push({ id: "2", nombre: "Dios esta aqui", nota: "G", cifradoText: diosestaaqui });
+    this.cifrados.push({ id: "3", nombre: "Eres", nota: "", cifradoText: eres });
+    this.cifrados.push({ id: "4", nombre: "El espiritu de Dios esta en este lugar", nota: "", cifradoText: elespiritudediosesta });
+    this.cifrados.push({ id: "5", nombre: "En el nombre de Jesus", nota: "", cifradoText: en_el_nombre_de_jesus  });
+    this.cifrados.push({ id: "6", nombre: "Algo esta cayendo aqui", nota: "", cifradoText: algoestacallendoaqui });
+    this.cifrados.push({ id: "7", nombre: "Hay momentos que las palabras", nota: "", cifradoText: haymomentosquelaspalabras });
+    this.cifrados.push({ id: "8", nombre: "Progresion 01", nota: "", cifradoText: circulo01 });
+
   }
 
   getCifrados() {
@@ -33,10 +47,12 @@ export class CifradoService {
       } else {
         notasiguiente = this.notas2[i - 1]
       }
-      texto = texto?.replaceAll(`|${nota}|`, `|${notasiguiente}|`)
+      texto = texto?.replaceAll(`|${nota}|`, `|--${notasiguiente}--|`)
       console.log(`${nota}  ${notasiguiente}`)
     });
-    cifrado.cifradoText = texto;
+
+
+    cifrado.cifradoText = texto.replaceAll('--','');
     return cifrado;
 
 
@@ -52,11 +68,11 @@ export class CifradoService {
       } else {
         notasiguiente = this.notas[i - 1]
       }
-      texto = texto?.replaceAll(`|${nota}|`, `|${notasiguiente}|`)
+      texto = texto?.replaceAll(`|${nota}|`, `|--${notasiguiente}--|`)
       console.log(`${nota}  ${notasiguiente}`)
 
     });
-    cifrado.cifradoText = texto;
+    cifrado.cifradoText = texto.replaceAll('--','');;
     return cifrado;
   }
 

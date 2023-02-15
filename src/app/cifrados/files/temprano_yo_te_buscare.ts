@@ -1,27 +1,27 @@
 let temprano_yo_te_buscare=`
-G                    D
+|G|                    |D|
 Temprano yo te buscaré
-C                   D
+|C|                   |D|
 de madrugada, yo me acercaré a tí
-G                         D
+|G|                         |D|
 mi alma te anhela y tiene sed
-C                  D
+|C|                  |D|
 para ver tu gloria y tu poder
 
-G     D              C
+|G|     |D|              |C|
 Mi socorro has sido tú
-      G             D
+      |G|             |D|
 en la sombra de tus alas
-C         D
+|C|         |D|
 yo me gozaré
 
-G           D           Em
+|G|           |D|           |E|m
 Mi alma está apegada a tí
-          C                   D
+          |C|                   |D|
 porque tu diestra, me ha sostenido
-       C                  D    G
+       |C|                  |D|    |G|
 oh! tu diestra me ha sostenido.
 
->>C'
+>>|C|'
 (colaboracion J. M. y M. Vega)`
 export {temprano_yo_te_buscare}
