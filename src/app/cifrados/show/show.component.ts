@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cifrado } from '../cifrado.interface';
+import { Cifrado } from '../model/cifrado.interface';
 import { CifradoService } from '../services/cifrado.service';
 
 @Component({

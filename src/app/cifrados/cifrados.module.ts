@@ -5,6 +5,9 @@ import { ShowComponent } from './show/show.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CifradoRoutingModule } from './cifrados-routing.module';
 import { RemovePipePipe } from './services/removePipe';
+import { MytableComponent } from './common/mytable/mytable.component';
+import { MaterialModule } from '@app/material/material.module';
+import { InputComponent } from './common/input/input.component';
 
 
 
@@ -15,14 +18,18 @@ import { RemovePipePipe } from './services/removePipe';
     ListComponent,
     ShowComponent,
     LayoutComponent,
-    RemovePipePipe
+    RemovePipePipe,
+    MytableComponent,
+    InputComponent,
+    
+
 
   ],
   imports: [
-    CommonModule,CifradoRoutingModule
+    CommonModule,CifradoRoutingModule,MaterialModule
   ]
   ,exports:[
-    
+    MytableComponent
   ]
 })
 export class CifradosModule { }

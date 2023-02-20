@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Agregando cifrados a ... {{data.servicio}}</h1>
+<div mat-dialog-content>
+    <p>Ingrese un nombre de un cifrado</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Escriba un nombre</mat-label>
+        <input matInput [(ngModel)]="data.busqueda">
+    </mat-form-field>
+</div>
+
+<app-mytable [cifrados]="cifrados" [agregar]="true"
+(onAgregar)="agregarCifradoAServicio($event)"></app-mytable>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

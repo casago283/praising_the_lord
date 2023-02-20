@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cifrado } from '../cifrado.interface';
+import { Cifrado } from '../model/cifrado.interface';
 import { CifradoService } from '../services/cifrado.service';
 
 
