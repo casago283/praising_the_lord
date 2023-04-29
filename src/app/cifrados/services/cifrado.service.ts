@@ -9,41 +9,86 @@ import { eres } from '../files/eres';
 import { haymomentosquelaspalabras } from '../files/hay_momentos_que_las_palabras';
 import { hermoso_eres_tu } from '../files/hermoso_eres_tu';
 import { temprano_yo_te_buscare } from '../files/temprano_yo_te_buscare';
+import { tu_fidelidad } from '../files/tu_fidelidad';
+import { glorificate } from '../files/glorificate';
+import { somos_el_pueblo_de_dios } from '../files/somos_el_pueblo_de_dios';
+import { levantate_miel_san_marcos } from '../files/levantate_miel_san_marcos';
+import { la_unica_razon } from '../files/la_unica_razon';
+import { el_santo_de_israel } from '../files/el_santo_de_israel';
+import { libre } from '../files/libre';
+import { ya_ha_llegado_el_momento_de } from '../files/ya_ha_llega_el_momento';
+import { hay_una_uncion } from '../files/hay_una_uncion';
+import { yo_quiero_mas_de_ti } from '../files/quiero_mas_de_ti';
+import { me_gozare_en_tu_presencia } from '../files/me_gozare_en_tu_precencia';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CifradoService {
+  incremental: number = 0
   cifrados = new Array<Cifrado>()
   notas = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
   notas2 = ["C", "B", "A#", "A", "G#", "G", "F#", "F", "E", "D#", "D", "C#"]
   constructor() {
-   
+
     if (null == localStorage.getItem('cifrado')) {
-      this.cifrados.push({ id: "1", nombre: "Hermoso eres tu", nota: "A", cifradoText: hermoso_eres_tu });
-      this.cifrados.push({ id: "2", nombre: "Dios esta aqui", nota: "G", cifradoText: diosestaaqui });
-      this.cifrados.push({ id: "3", nombre: "Eres", nota: "", cifradoText: eres });
-      this.cifrados.push({ id: "4", nombre: "El espiritu de Dios esta en este lugar", nota: "", cifradoText: elespiritudediosesta });
-      this.cifrados.push({ id: "5", nombre: "En el nombre de Jesus", nota: "", cifradoText: en_el_nombre_de_jesus });
-      this.cifrados.push({ id: "6", nombre: "Algo esta cayendo aqui", nota: "", cifradoText: algoestacallendoaqui });
-      this.cifrados.push({ id: "7", nombre: "Hay momentos que las palabras", nota: "", cifradoText: haymomentosquelaspalabras });
-      this.cifrados.push({ id: "8", nombre: "Progresion 01", nota: "", cifradoText: circulo01 });
-      localStorage.setItem('cifrado', JSON.stringify(this.cifrados));
-      console.log("no hay registros")
-      console.log()
-    }else{
-      let cif = `${localStorage.getItem('cifrado')}`
-      this.cifrados = JSON.parse(cif)
+      try {
+        this.armarCifrado()
+      } catch (error) {
+        console.log("hay errores en el Json")
+      }
+      
+    } else {
+      try {
+        let cif = `${localStorage.getItem('cifrado')}`
+        this.cifrados = JSON.parse(cif)
+      } catch (error) {
+        console.log("hay error en el Json")
+      }
+   
     }
 
   }
 
+  armarCifrado(){
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Hermoso eres tu", nota: "A", cifradoText: hermoso_eres_tu });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Dios esta aqui", nota: "G", cifradoText: diosestaaqui });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Eres", nota: "", cifradoText: eres });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "El espiritu de Dios esta en este lugar", nota: "", cifradoText: elespiritudediosesta });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "En el nombre de Jesus", nota: "", cifradoText: en_el_nombre_de_jesus });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Algo esta cayendo aqui", nota: "", cifradoText: algoestacallendoaqui });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Hay momentos que las palabras", nota: "", cifradoText: haymomentosquelaspalabras });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Tu fidelidad", nota: "", cifradoText: tu_fidelidad });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Glorificate", nota: "", cifradoText: glorificate });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Temprano yo te buscaré", nota: "", cifradoText: temprano_yo_te_buscare });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Somos el pueblo de Dios", nota: "", cifradoText: somos_el_pueblo_de_dios });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Levantate Señor", nota: "", cifradoText: levantate_miel_san_marcos });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "La unica razon", nota: "", cifradoText: la_unica_razon  });
+
+    this.cifrados.push({ id: this.getIncremental(), nombre: "El santo de Israel", nota: "", cifradoText: el_santo_de_israel });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Libre", nota: "", cifradoText: libre });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Ya ha llegado el momento de", nota: "", cifradoText: ya_ha_llegado_el_momento_de });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Hay una uncion", nota: "", cifradoText: hay_una_uncion });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Yo quiero mas de ti", nota: "", cifradoText: yo_quiero_mas_de_ti });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Me gozare en tu presencia", nota: "", cifradoText: me_gozare_en_tu_presencia });
+
+//    this.cifrados.push({ id: this.getIncremental(), nombre: "", nota: "", cifradoText:  });
+    localStorage.setItem('cifrado', JSON.stringify(this.cifrados));
+  }
+
+  getIncremental() {
+    this.incremental = this.incremental+1
+    return `${this.incremental}`
+
+
+  }
   getCifrados() {
     return this.cifrados;
   }
 
-  filtrarCifrados(filtro:string){
-    let cifrados = this.cifrados.filter(s => s.nombre?.includes( filtro))
+  filtrarCifrados(filtro: string) {
+    let cifrados = this.cifrados.filter(s => s.nombre?.includes(filtro))
     return cifrados;
   }
 

@@ -1,7 +1,10 @@
 ﻿<div class="p-4">
     <div class="container">
-        <h1>Hi {{user?.firstName}}!</h1>
-        <p>You're logged in with Angular 14!!</p>
+        <h1>Hola {{user?.firstName}}!</h1>
+        <p>Bienvenidos a nuestra página de Cifrados</p>
         <p><a routerLink="/users">Manage Users</a></p>
+        <p>Si necesita actualizar/ reiniciar  el listado de cifrados y cambios en servicios click en el siguiente boton</p>
+        <button (click)="reiniciarTodo()" type="button" class="btn btn-outline-primary">Reiniciar cambios</button>
+      
     </div>
 </div>

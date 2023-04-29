@@ -8,19 +8,25 @@ import { CifradoService } from '@app/cifrados/services/cifrado.service';
 })
 export class ServiciosService {
   servicios = new Array<Servicio>()
-  constructor( private cifradoService: CifradoService,) {
+  constructor(private cifradoService: CifradoService,) {
     if (null == localStorage.getItem('servicios')) {
 
-      this.servicios.push({ id: "1", nombre: "Servicio deprueba", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
-      localStorage.setItem('servicios', JSON.stringify(this.servicios));
-      console.log(this.servicios)
+      this.reiniciarServicios()
+
     } else {
-      //this.servicios.push({ id: "1", nombre: "Servicio deprueba", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
-      //localStorage.setItem('servicios', JSON.stringify(this.servicios));
-      let cif = `${localStorage.getItem('servicios')}`
-      this.servicios = JSON.parse(cif)
-      console.log(this.servicios)
+      try {
+        let cif = `${localStorage.getItem('servicios')}`
+        this.servicios = JSON.parse(cif)
+      } catch (error) {
+        console.log("Hay errores en el Json de servicios")
+      }
+
     }
+  }
+
+  reiniciarServicios() {
+    this.servicios.push({ id: "1", nombre: "Servicio deprueba", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
+    localStorage.setItem('servicios', JSON.stringify(this.servicios));
   }
 
   getServicios() {
@@ -69,13 +75,13 @@ export class ServiciosService {
     localStorage.setItem('servicios', JSON.stringify(this.servicios));
   }
 
-  addCifradoToService(idServicio:any,idCifrado:any){
-    const cifrado:Cifrado = this.cifradoService.getCifrado(idCifrado)
+  addCifradoToService(idServicio: any, idCifrado: any) {
+    const cifrado: Cifrado = this.cifradoService.getCifrado(idCifrado)
     this.servicios.filter((s, index) => {
       if (idServicio == s.id) {
-        
+
         this.servicios[index].cifrados.push(cifrado)
-  
+
       } else {
         return
       }
@@ -84,16 +90,17 @@ export class ServiciosService {
     localStorage.setItem('servicios', JSON.stringify(this.servicios));
   }
 
-  deleteCifradoToService(idServicio:any,idCifrado:any){
-   // const cifrado = this.cifradoService.getCifrado(idCifrado)
+  deleteCifradoToService(idServicio: any, idCifrado: any) {
+    // const cifrado = this.cifradoService.getCifrado(idCifrado)
 
     this.servicios.filter((s, index) => {
       if (idServicio == s.id) {
-        this.servicios[index].cifrados.filter((s2,index2 )=>{
-          if(idCifrado == s2.id){
-           this.servicios[index].cifrados.splice(index2,1)
+        this.servicios[index].cifrados.filter((s2, index2) => {
+          if (idCifrado == s2.id) {
+            this.servicios[index].cifrados.splice(index2, 1)
           }
-        })     } else {
+        })
+      } else {
         return
       }
     })
