@@ -8,6 +8,7 @@ import { RemovePipePipe } from './services/removePipe';
 import { MytableComponent } from './common/mytable/mytable.component';
 import { MaterialModule } from '@app/material/material.module';
 import { InputComponent } from './common/input/input.component';
+import { CifradoComponent } from './common/cifrado/cifrado.component';
 
 
 
@@ -21,6 +22,8 @@ import { InputComponent } from './common/input/input.component';
     RemovePipePipe,
     MytableComponent,
     InputComponent,
+
+    CifradoComponent,
     
 
 

@@ -1,4 +1,6 @@
 <div class="">
+
+
   <table mat-table [dataSource]="dataSource" class="" #tabla1>
 
     <ng-container matColumnDef="id">
@@ -13,16 +15,17 @@
 
     <ng-container matColumnDef="nota">
       <th mat-header-cell *matHeaderCellDef> Nota </th>
-      <td mat-cell *matCellDef="let cifrado"> {{cifrado.nota}} </td>
+      <td mat-cell *matCellDef="let cifrado">  </td>
     </ng-container>
 
     <ng-container matColumnDef="accion">
       <th mat-header-cell *matHeaderCellDef> Accion </th>
       <td mat-cell *matCellDef="let cifrado">
-        <a *ngIf="mostrar" routerLink="show/{{cifrado.id}}" class="btn btn-sm btn-primary me-1">Mostrar</a>
-
-        <button class="btn btn-sm btn-primary me-1" *ngIf="agregar" mat-button
-          (click)="agregarAServicio(cifrado.id)">Agregar</button>
+        <button mat-raised-button *ngIf="mostrar" (click)="openDialog(cifrado)">Mostrar</button>
+        <button class="btn btn-sm btn-primary me-1" *ngIf="agregarEnServicio" mat-button
+          (click)="agregarAServicio(cifrado.id)">Agregar a Servicio</button>
+          <button class="btn btn-sm btn-primary me-1" *ngIf="eliminarEnServicio" mat-button
+          (click)="eliminarAServicio(cifrado.id)">Eliminar a Servicio</button> 
       </td>
 
     </ng-container>

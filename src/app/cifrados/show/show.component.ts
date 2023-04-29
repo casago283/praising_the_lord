@@ -23,17 +23,5 @@ export class ShowComponent implements OnInit {
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     this.cifrado = this.cifrados.getCifrado(id);
-  
-  }
-
-  subirNota() {
-    this.cifrado=this.cifrados.subirMedioTono(this.cifrado)
-    console.log("subiendo nota")
-
-  }
-  bajarNota(){
-    this.cifrado=this.cifrados.bajarMedioTono(this.cifrado)
-
-    console.log("bajando nota")
   }
 }

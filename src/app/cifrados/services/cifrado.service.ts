@@ -41,6 +41,13 @@ export class CifradoService {
   getCifrados() {
     return this.cifrados;
   }
+
+  filtrarCifrados(filtro:string){
+    let cifrados = this.cifrados.filter(s => s.nombre?.includes( filtro))
+    return cifrados;
+  }
+
+
   getCifrado<Cifrado>(id: string) {
     let cifrado = this.cifrados.filter(s => s.id == id)
     return cifrado[0];

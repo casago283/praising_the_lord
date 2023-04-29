@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Cifrado } from '@app/cifrados/model/cifrado.interface';
 import { Servicio } from '../model/servicio.model';
+import { CifradoService } from '@app/cifrados/services/cifrado.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiciosService {
   servicios = new Array<Servicio>()
-  constructor() {
+  constructor( private cifradoService: CifradoService,) {
     if (null == localStorage.getItem('servicios')) {
+
       this.servicios.push({ id: "1", nombre: "Servicio deprueba", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
       localStorage.setItem('servicios', JSON.stringify(this.servicios));
+      console.log(this.servicios)
     } else {
+      //this.servicios.push({ id: "1", nombre: "Servicio deprueba", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
+      //localStorage.setItem('servicios', JSON.stringify(this.servicios));
       let cif = `${localStorage.getItem('servicios')}`
       this.servicios = JSON.parse(cif)
+      console.log(this.servicios)
     }
   }
 
@@ -63,7 +69,37 @@ export class ServiciosService {
     localStorage.setItem('servicios', JSON.stringify(this.servicios));
   }
 
+  addCifradoToService(idServicio:any,idCifrado:any){
+    const cifrado:Cifrado = this.cifradoService.getCifrado(idCifrado)
+    this.servicios.filter((s, index) => {
+      if (idServicio == s.id) {
+        
+        this.servicios[index].cifrados.push(cifrado)
+  
+      } else {
+        return
+      }
+    })
 
+    localStorage.setItem('servicios', JSON.stringify(this.servicios));
+  }
+
+  deleteCifradoToService(idServicio:any,idCifrado:any){
+   // const cifrado = this.cifradoService.getCifrado(idCifrado)
+
+    this.servicios.filter((s, index) => {
+      if (idServicio == s.id) {
+        this.servicios[index].cifrados.filter((s2,index2 )=>{
+          if(idCifrado == s2.id){
+           this.servicios[index].cifrados.splice(index2,1)
+          }
+        })     } else {
+        return
+      }
+    })
+
+    localStorage.setItem('servicios', JSON.stringify(this.servicios));
+  }
 
 
 }

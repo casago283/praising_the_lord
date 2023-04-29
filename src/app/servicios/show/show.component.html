@@ -1,8 +1,8 @@
-<p>{{servicio.id}}</p>
-<p>{{servicio.nombre}}</p>
-<p>{{servicio.fecha}}</p>
-<p>{{servicio.descripcion}}</p>
+<p>{{servicio$.id}}</p>
+<p>{{servicio$.nombre}}</p>
+<p>{{servicio$.fecha}}</p>
+<p>{{servicio$.descripcion}}</p>
 
 <button mat-raised-button (click)="openDialog()">Agregar Cifrados</button>
 
-<app-mytable [cifrados]="servicio.cifrados"></app-mytable>
+<app-mytable [cifrados]="servicio$.cifrados" [mostrar]="true" (onEliminar)="eliminarCifradoAServicio($event)" [eliminarEnServicio]="true" ></app-mytable>
