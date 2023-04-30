@@ -3,8 +3,10 @@
     <p>Ingrese un nombre de un cifrado</p>
     <mat-form-field appearance="fill">
         <mat-label>Escriba un nombre</mat-label>
-        <input matInput [(ngModel)]="filtro" (keyup.enter)="alFiltrar()">
+        <input matInput  [(ngModel)]="filtro" (keyup.enter)="alFiltrar()"> 
     </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="alFiltrar()">Buscar</button>
 </div>
 <mat-dialog-content>
     <app-mytable [cifrados]="cifrados" [agregarEnServicio]="true" (onAgregar)="agregarCifradoAServicio($event)"
