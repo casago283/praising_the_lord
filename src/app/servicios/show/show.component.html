@@ -2,7 +2,8 @@
 <p>{{servicio$.nombre}}</p>
 <p>{{servicio$.fecha}}</p>
 <p>{{servicio$.descripcion}}</p>
-
+<mat-dialog-content>
 <button mat-raised-button (click)="openDialog()">Agregar Cifrados</button>
 
-<app-mytable [cifrados]="servicio$.cifrados" [mostrar]="true" (onEliminar)="eliminarCifradoAServicio($event)" [eliminarEnServicio]="true" ></app-mytable>
+    <app-mytable [cifrados]="servicio$.cifrados" [mostrar]="true" (onEliminar)="eliminarCifradoAServicio($event)" [eliminarEnServicio]="true" ></app-mytable>
+</mat-dialog-content>

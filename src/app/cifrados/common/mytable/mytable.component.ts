@@ -55,8 +55,7 @@ export class MytableComponent implements OnInit {
   openDialog(cifrado:Cifrado){
     console.log(cifrado)
     const dialogRef = this.dialog.open(CifradoComponent, {
-      minWidth:'1000px',
-      maxHeight: '600px',
+
       data: { cifrado:cifrado }
     });
   }

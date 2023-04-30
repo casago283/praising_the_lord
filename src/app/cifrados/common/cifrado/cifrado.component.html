@@ -1,8 +1,11 @@
 <h3>{{cifrado.nombre}}</h3>
 <button (click)="subirNota()" type="button" class="btn btn-outline-primary">Subir Tono</button>
 <button (click)="bajarNota()" type="button" class="btn btn-outline-primary">Bajar Tono</button>
+
+<mat-dialog-content>
 <p style="white-space: pre-line;white-space:pre-wrap">{{cifrado.cifradoText|RemovePipePipe}}</p>
 <div mat-dialog-actions>
    
     <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
 </div>
+</mat-dialog-content>

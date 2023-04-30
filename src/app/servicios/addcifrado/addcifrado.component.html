@@ -6,12 +6,12 @@
         <input matInput [(ngModel)]="filtro" (keyup.enter)="alFiltrar()">
     </mat-form-field>
 </div>
+<mat-dialog-content>
+    <app-mytable [cifrados]="cifrados" [agregarEnServicio]="true" (onAgregar)="agregarCifradoAServicio($event)"
+        (onEliminar)="eliminarCifradoAServicio($event)"></app-mytable>
 
-<app-mytable [cifrados]="cifrados" [agregarEnServicio]="true"
-(onAgregar)="agregarCifradoAServicio($event)"
-(onEliminar)="eliminarCifradoAServicio($event)"></app-mytable>
-
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cerrar</button>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
-</div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cerrar</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+    </div>
+</mat-dialog-content>
