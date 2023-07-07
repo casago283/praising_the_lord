@@ -1,5 +1,5 @@
 import { Component, Inject, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Cifrado } from '@app/cifrados/model/cifrado.interface';
 import { CifradoService } from '@app/cifrados/services/cifrado.service';
 import { ShowComponent } from '@app/cifrados/show/show.component';

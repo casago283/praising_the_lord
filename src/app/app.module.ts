@@ -21,8 +21,7 @@ import { MaterialModule } from './material/material.module';
         ReactiveFormsModule,
         HttpClientModule,
         AppRoutingModule,
-        BrowserAnimationsModule
-    ],
+        BrowserAnimationsModule    ],
     declarations: [
         AppComponent,
         AlertComponent,

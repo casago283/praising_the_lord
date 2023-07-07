@@ -8,7 +8,6 @@ import { ServiciosRoutingModule } from './servicios-routing.module';
 import { MaterialModule } from '@app/material/material.module';
 import { CifradosModule } from '@app/cifrados/cifrados.module';
 import { AddcifradoComponent } from './addcifrado/addcifrado.component';
-import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     AddcifradoComponent
   ],
   imports: [
-    CommonModule,ServiciosRoutingModule,MaterialModule,CifradosModule,FormsModule
+    CommonModule,ServiciosRoutingModule,MaterialModule,CifradosModule
   ]
 })
 export class ServiciosModule { }

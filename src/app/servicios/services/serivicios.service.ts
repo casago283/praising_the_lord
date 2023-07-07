@@ -25,7 +25,9 @@ export class ServiciosService {
   }
 
   reiniciarServicios() {
-    this.servicios.push({ id: "1", nombre: "Servicio deprueba", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
+    this.servicios.push({ id: "1", nombre: "Servicio 01", fecha: "Hoy", descripcion: "Servicio....", cifrados: [] });
+    this.servicios.push({ id: "2", nombre: "Servicio 02", fecha: "Mañana", descripcion: "Servicio....", cifrados: [] });
+
     localStorage.setItem('servicios', JSON.stringify(this.servicios));
   }
 

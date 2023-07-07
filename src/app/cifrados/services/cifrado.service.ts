@@ -20,6 +20,17 @@ import { ya_ha_llegado_el_momento_de } from '../files/ya_ha_llega_el_momento';
 import { hay_una_uncion } from '../files/hay_una_uncion';
 import { yo_quiero_mas_de_ti } from '../files/quiero_mas_de_ti';
 import { me_gozare_en_tu_presencia } from '../files/me_gozare_en_tu_precencia';
+import { soberano_dios } from '../files/soberano_dios';
+import { cuan_bello_es_el_señor } from '../files/cuan_bello_es_el_señor';
+import { celebrad_a_cristo_celebrad } from '../files/celebrad_a_cristo_celebrad';
+import { cristo_no_esta_muerto } from '../files/cristo_no_esta_muerto';
+import { el_poderoso_de_israel } from '../files/el_es_el_poderoso_de_israel';
+import { venid_todos_y_celebrad } from '../files/venid_todos_y_celebrad';
+import { no_hay_lugar_mas_alto } from '../files/no_hay_lugar_mas_alto';
+import { oh_moradora } from '../files/oh_moradora';
+import { entra_en_la_presencia } from '../files/entra_en_la_presencia';
+import { bendito_sea_el_señor_dios_poderoso } from '../files/bendito_sea_el_señor_poderoso';
+import { abre_mis_ojos_oh_cristo } from '../files/abre_mis_ojos_oh_cristo';
 
 
 @Injectable({
@@ -38,7 +49,7 @@ export class CifradoService {
       } catch (error) {
         console.log("hay errores en el Json")
       }
-      
+
     } else {
       try {
         let cif = `${localStorage.getItem('cifrado')}`
@@ -46,12 +57,12 @@ export class CifradoService {
       } catch (error) {
         console.log("hay error en el Json")
       }
-   
+
     }
 
   }
 
-  armarCifrado(){
+  armarCifrado() {
     this.cifrados.push({ id: this.getIncremental(), nombre: "Hermoso eres tu", nota: "A", cifradoText: hermoso_eres_tu });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Dios esta aqui", nota: "G", cifradoText: diosestaaqui });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Eres", nota: "", cifradoText: eres });
@@ -64,7 +75,7 @@ export class CifradoService {
     this.cifrados.push({ id: this.getIncremental(), nombre: "Temprano yo te buscaré", nota: "", cifradoText: temprano_yo_te_buscare });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Somos el pueblo de Dios", nota: "", cifradoText: somos_el_pueblo_de_dios });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Levantate Señor", nota: "", cifradoText: levantate_miel_san_marcos });
-    this.cifrados.push({ id: this.getIncremental(), nombre: "La unica razon", nota: "", cifradoText: la_unica_razon  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "La unica razon", nota: "", cifradoText: la_unica_razon });
 
     this.cifrados.push({ id: this.getIncremental(), nombre: "El santo de Israel", nota: "", cifradoText: el_santo_de_israel });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Libre", nota: "", cifradoText: libre });
@@ -72,13 +83,28 @@ export class CifradoService {
     this.cifrados.push({ id: this.getIncremental(), nombre: "Hay una uncion", nota: "", cifradoText: hay_una_uncion });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Yo quiero mas de ti", nota: "", cifradoText: yo_quiero_mas_de_ti });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Me gozare en tu presencia", nota: "", cifradoText: me_gozare_en_tu_presencia });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Soberano Dios", nota: "", cifradoText: soberano_dios });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Cuan bello es el señor", nota: "", cifradoText: cuan_bello_es_el_señor });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Abre mis ojos oh Cristo", nota: "", cifradoText: abre_mis_ojos_oh_cristo });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Celebrad a Cristo celebrad", nota: "", cifradoText: celebrad_a_cristo_celebrad });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Cristo no está muerto", nota: "", cifradoText: cristo_no_esta_muerto });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "El poderoso de Israel", nota: "", cifradoText: el_poderoso_de_israel });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Oh moradora de Sion", nota: "", cifradoText: oh_moradora });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Venid todos y celebrad", nota: "", cifradoText: venid_todos_y_celebrad });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "No hay lugar mas alto", nota: "", cifradoText: no_hay_lugar_mas_alto });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Entra en la presencia", nota: "", cifradoText: entra_en_la_presencia });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Bendito sea el Señor Dios poderoso", nota: "", cifradoText: bendito_sea_el_señor_dios_poderoso });
 
-//    this.cifrados.push({ id: this.getIncremental(), nombre: "", nota: "", cifradoText:  });
+
+
+
+
+    //    this.cifrados.push({ id: this.getIncremental(), nombre: "", nota: "", cifradoText:  });
     localStorage.setItem('cifrado', JSON.stringify(this.cifrados));
   }
 
   getIncremental() {
-    this.incremental = this.incremental+1
+    this.incremental = this.incremental + 1
     return `${this.incremental}`
 
 
@@ -88,7 +114,7 @@ export class CifradoService {
   }
 
   filtrarCifrados(filtro: string) {
-    let cifrados = this.cifrados.filter(s => s.nombre?.includes(filtro))
+    let cifrados = this.cifrados.filter(s => s.nombre?.toLowerCase()?.includes(filtro.toLowerCase()))
     return cifrados;
   }
 

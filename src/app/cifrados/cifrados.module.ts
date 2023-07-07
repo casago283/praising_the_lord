@@ -11,9 +11,6 @@ import { InputComponent } from './common/input/input.component';
 import { CifradoComponent } from './common/cifrado/cifrado.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     ListComponent,
@@ -25,11 +22,9 @@ import { CifradoComponent } from './common/cifrado/cifrado.component';
 
     CifradoComponent,
     
-
-
   ],
   imports: [
-    CommonModule,CifradoRoutingModule,MaterialModule
+    CommonModule,CifradoRoutingModule ,MaterialModule
   ]
   ,exports:[
     MytableComponent
