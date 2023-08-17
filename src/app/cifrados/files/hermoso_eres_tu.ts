@@ -51,6 +51,8 @@ Tú eres la fuente de mi vida
 |B|m      |C#|m  |D|         |E|
 Y el anhelo de mi corazón //
 
-Final: // A - D - E // A`
+Final: // |A| - |D| - |E| // |A|
+
+`
 
 export{ hermoso_eres_tu}

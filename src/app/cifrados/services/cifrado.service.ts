@@ -31,6 +31,19 @@ import { oh_moradora } from '../files/oh_moradora';
 import { entra_en_la_presencia } from '../files/entra_en_la_presencia';
 import { bendito_sea_el_señor_dios_poderoso } from '../files/bendito_sea_el_señor_poderoso';
 import { abre_mis_ojos_oh_cristo } from '../files/abre_mis_ojos_oh_cristo';
+import { bueno_es_alabarte_senor } from '../files/bueno_es_alabarte_señor';
+import { al_que_es_digno } from '../files/al_que_es_digno';
+import { grandes_son_tus_maravillas } from '../files/grandes_son_tus_maravillas';
+import { anciano_de_dias } from '../files/anciano_de_dias';
+import { al_que_me_sine } from '../files/al_que_me_sine';
+import { sueños } from '../files/sueños';
+import { dios_de_lo_imposible } from '../files/dios_de_lo_imposible';
+import { eres_señor_vencedor } from '../files/eres_señor_vencedor';
+import { tal_como_soy } from '../files/tal_como_soy';
+import { eres_el_mas_precioso } from '../files/eres_el_mas_precioso';
+import { recibe_toda_la_gloria } from '../files/recibe_toda_la_gloria';
+import { mas_el_dios_de_toda_gracia } from '../files/mas_el_dios_de_toda_gracia';
+import { conozco_que_todo_lo_puedes } from '../files/conozco_que_todo_lo_puedes';
 
 
 @Injectable({
@@ -94,6 +107,28 @@ export class CifradoService {
     this.cifrados.push({ id: this.getIncremental(), nombre: "No hay lugar mas alto", nota: "", cifradoText: no_hay_lugar_mas_alto });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Entra en la presencia", nota: "", cifradoText: entra_en_la_presencia });
     this.cifrados.push({ id: this.getIncremental(), nombre: "Bendito sea el Señor Dios poderoso", nota: "", cifradoText: bendito_sea_el_señor_dios_poderoso });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Bueno es alabarte Senor", nota: "", cifradoText: bueno_es_alabarte_senor });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Al que es digno", nota: "", cifradoText: al_que_es_digno });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Grandes son tus maravillas", nota: "", cifradoText: grandes_son_tus_maravillas });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Anciano de dias", nota: "", cifradoText: anciano_de_dias });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Al que me sine de poder", nota: "", cifradoText: al_que_me_sine  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Sueños", nota: "", cifradoText: sueños  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Dios de lo imposible", nota: "", cifradoText: dios_de_lo_imposible  });
+
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Eres señor vencedor", nota: "", cifradoText: eres_señor_vencedor  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Tal como soy", nota: "", cifradoText: tal_como_soy  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Eres el mas precioso", nota: "", cifradoText: eres_el_mas_precioso  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Recibe toda la gloria", nota: "", cifradoText: recibe_toda_la_gloria  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Mas el Dios de toda gracia", nota: "", cifradoText: mas_el_dios_de_toda_gracia  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Conozco que todo lo puedes", nota: "", cifradoText: conozco_que_todo_lo_puedes  });
+    this.cifrados.push({ id: this.getIncremental(), nombre: "Yo quiero mas de ti", nota: "", cifradoText: yo_quiero_mas_de_ti  });
+
+
+
+
+
+
+    
 
 
 
